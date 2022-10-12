@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -37,6 +36,12 @@ public class Cube : MonoBehaviour
     {
         if (transform.position.x >= _distance)
             Destroy(gameObject);
+    }
+
+    public void DestrotAllCubes()
+    {
+        foreach (var item in FindObjectsOfType<Cube>())
+            Destroy(item.gameObject);
     }
 
     private void RotateCube(RotateDirection dir, float turnRate, int turnDirection)
